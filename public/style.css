@@ -101,6 +101,7 @@ nav .right a img{
     word-break: break-all;
     max-height: 200px;
     overflow-y: scroll;
+    margin-bottom: 7px;
 }
 .out p{color: white;}
 .letter p::-webkit-scrollbar{background: transparent;width: 7px;}
