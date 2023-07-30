@@ -295,10 +295,10 @@ nav .right a img{
 }
 
 
-@media(max-width:500px){
+@media(max-width:515px){
     nav{position: sticky;top: 0;}
     nav .left img{height: 29px;}
-    nav .left h1{font-size: 5.5vw;}
+    nav .left h1{font-size: 5.1vw;}
     nav .right a img{height: 23px;}
     .box{width: 100%;}
     .bar{
