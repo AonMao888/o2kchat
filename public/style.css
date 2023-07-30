@@ -1,0 +1,328 @@
+body{
+    margin: 0;
+    background: url('https://i.pinimg.com/originals/ec/aa/be/ecaabe09a8b8cb7638aa0992f42ae12a.jpg') no-repeat;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+}
+.box{
+    background: rgba(255, 255, 255, 0.075);
+    width: 500px;
+    backdrop-filter: blur(5px);
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    height: 53px;
+    border-bottom: 1px solid #e2e2e2;
+    z-index: 1;
+}
+nav .left{
+    display: flex;
+    align-items: center;
+    margin-left: 12px;
+}
+nav .left img{
+    height: 42px;
+    object-fit: contain;
+    object-position: center;
+    user-select: none;
+}
+nav .left h1{
+    margin: 0;
+    margin-left: 9px;
+    font-size: 27px;
+    color: rgb(105, 65, 225);
+}
+nav .right{
+    display: flex;
+    align-items: center;
+    margin-right: 9px;
+}
+nav .right a{
+    margin: 2px 9px;
+}
+nav .right a img{
+    height: 29px;
+    object-fit: contain;
+    object-position: center;
+    user-select: none;
+}
+.msg{
+    width: 100%;
+    height: calc(100vh - 107px);
+    overflow-y: scroll;
+}
+.msg::-webkit-scrollbar{
+    background: transparent;
+    width: 9px;
+}
+.msg::-webkit-scrollbar-thumb{
+    background: rebeccapurple;
+    border-radius: 9px;
+}
+.text{
+    width: 100%;
+    margin: 5px 0;
+}
+.in{
+    display: flex;
+    justify-content: flex-start;
+}
+.out{
+    display: flex;
+    justify-content: flex-end;
+}
+.in .letter{
+    margin-left: 9px;
+    background: white;
+    border-bottom-right-radius: 9px;
+}
+.out .letter{
+    margin-right: 9px;
+    border-bottom-left-radius: 9px;
+    background: rgb(122, 155, 254);
+}
+.letter{
+    width: max-content;
+    max-width: 63%;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+    padding: 9px 12px;
+}
+.letter p{
+    margin: 0;
+    color: #333;
+    font-size: 19px;
+    word-break: break-all;
+    max-height: 200px;
+    overflow-y: scroll;
+}
+.out p{color: white;}
+.letter p::-webkit-scrollbar{background: transparent;width: 7px;}
+.letter p::-webkit-scrollbar-thumb{background: rebeccapurple;border-radius: 9px;cursor: pointer;}
+.er{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.er h5{
+    margin: 0;
+    color: royalblue;
+    font-size: 17px;
+    margin-right: 9px;
+}
+.er span{
+    color: #333;
+    font-size: 17px;
+}
+.out .er h5{
+    color: white;
+}
+.bar{
+    background: white;
+    display: flex;
+    align-items: center;
+    height: 51px;
+    border-top: 1px solid #e2e2e2;
+}
+.bar a{
+    margin: 2px 7px;
+    user-select: none;
+}
+.bar a img{
+    height: 32px;
+    object-fit: contain;
+    object-position: center;
+}
+.bar input{
+    font-size: 19px;
+    padding: 5px;
+    background: none;
+    color: #333;
+    width: 100%;
+    outline: none;
+    border: none;
+}
+.bar button{
+    margin-right: 9px;
+    user-select: none;
+    background: none;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    transform: scale(1);
+    transition: 0.4s;
+}
+.bar button:active{
+    transform: scale(0.89);
+}
+.bar button img{
+    height: 27px;
+}
+.typing{
+    position: fixed;
+    top: -23px;
+    left: 50%;
+    transform: translate(-50%,0);
+    font-size: 17px;
+    transition: 0.4s;
+    padding: 8px 19px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+}
+.ask{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.ask h1{
+    font-size: 36px;
+    color: royalblue;
+    margin: 9px;
+}
+.ask input{
+    width: 450px;
+    padding: 9px 12px;
+    font-size: 18px;
+    background: none;
+    border: 2px solid dimgray;
+    outline-color: royalblue;
+    border-radius: 4px;
+}
+.ask p{
+    font-size: 17px;
+    color: red;
+    padding: 5px 9px;
+    margin: 0;
+    width: 450px;
+}
+.ask button{
+    margin-top: 51px;
+    width: 242px;
+    padding: 12px 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    outline: 2px solid white;
+    outline-offset: -4px;
+    border-radius: 4px;
+    background: royalblue;
+    color: white;
+    transition: 0.4s;
+    transform: scale(1);
+}
+.ask button:hover{
+    color: #333;
+}
+.ask button:active{
+    transform: scale(0.91);
+    outline-offset: 5px;
+    outline-color: royalblue;
+}
+.joined{
+    width: 91%;
+    margin: 2px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    color: white;
+}
+.joined p{
+    color: rgb(92, 255, 47);
+    margin: 3px;
+}
+.pop{
+    position: fixed;
+    left: 0;top: 0;
+    width: 100%;height: 100%;
+    z-index: 1;
+    background: white;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.pop h1{
+    margin: 0;
+    font-size: 29px;
+    color: #333;
+}
+.pop h1 span{
+    font-size: 17px;
+    color: royalblue;
+    margin-left: 2px;
+}
+.pop p{
+    margin: 0;
+    color: dimgray;
+    margin-bottom: 36px;
+}
+.pop img{
+    width: 191px;
+    height: 191px;
+    object-fit: contain;
+    object-position: center;
+    user-select: none;
+}
+.pop button{
+    margin-top: 19px;
+    width: 200px;
+    color: #fff;
+    background: rgb(255, 65, 65);
+    padding: 9px 0;
+    outline: none;border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+@media(max-width:500px){
+    nav{position: sticky;top: 0;}
+    nav .left img{height: 29px;}
+    nav .left h1{font-size: 5.5vw;}
+    nav .right a img{height: 23px;}
+    .box{width: 100%;}
+    .bar{
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+    .letter p{font-size: 15px;}
+    .er h5{font-size: 15px;}
+    .er span{font-size: 15px;}
+    .typing{font-size: 15px;max-width: 91%;word-break: break-all;}
+    .ask h1{font-size: 29px;margin-bottom: 36px;}
+    .ask input{width: 87%;font-size: 15px;}
+    .ask button{width: 55%;margin-top: 42px;font-size: 14px;padding: 9px 5px;}
+    .joined{font-size: 14px;}
+    .pop h1{font-size: 5vw;}.pop h1 span{font-size: 14px;}
+    .pop p{font-size: 15px;}
+    .pop img{
+        height: 123px;
+        width: 123px;
+    }
+    .pop button{
+        width: 51%;
+        font-size: 13px;
+        padding: 5px;
+    }
+}

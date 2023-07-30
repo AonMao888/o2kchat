@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O2K Chat room</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="box">
+        <nav>
+            <div class="left">
+                <img src="img/logo.png" alt="">
+                <h1>O2K Developers</h1>
+            </div>
+            <div class="right">
+                <a href="javascript:qr()"><img src="https://cdn-icons-png.flaticon.com/512/10846/10846192.png" alt=""></a>
+                <a href="javascript:invite()"><img src="https://cdn-icons-png.flaticon.com/512/8188/8188390.png" alt=""></a>
+            </div>
+        </nav>
+        <div class="typing"></div>
+        <div class="msg">
+        </div>
+        <div class="bar">
+            <a href="javascript:alert('Send image will available soon.')"><img src="https://cdn-icons-png.flaticon.com/512/10054/10054290.png" alt=""></a>
+            <input type="text" placeholder="Say something">
+            <button><img src="https://cdn-icons-png.flaticon.com/512/3682/3682321.png" alt=""></button>
+        </div>
+    </div>
+    <div class="ask">
+        <h1>Set your name</h1>
+        <input type="text" placeholder="Eg.kyaw gyi...">
+        <p></p>
+        <button>Submit</button>
+    </div>
+    <div class="pop">
+        <h1>Invite via<span>QR Code</span></h1>
+        <p>Aim your scanner to QR Code</p>
+        <img src="img/logo.png" alt="">
+        <button onclick="closepop()">Close</button>
+    </div>
+    <script src="socket.io/socket.io.js"></script>
+    <script src="j.js"></script>
+</body>
+</html>
