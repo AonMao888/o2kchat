@@ -374,7 +374,7 @@ nav .right a img{
     .ask input{width: 87%;font-size: 15px;}
     .ask button{width: 55%;margin-top: 42px;font-size: 14px;padding: 9px 5px;}
     .joined{font-size: 14px;}
-    .pop h1{font-size: 5vw;}.pop h1 span{font-size: 14px;}
+    .pop h1{font-size: 6vw;}.pop h1 span{font-size: 14px;}
     .pop p{font-size: 15px;}
     .pop img{
         height: 123px;
@@ -383,6 +383,11 @@ nav .right a img{
     .pop button{
         width: 51%;
         font-size: 13px;
-        padding: 5px;
+        padding: 7px;
+    }
+    .previewimg h1{font-size: 6vw;}
+    .previewimg img{width: 78%;}
+    .previewimg button{
+        width: 78%;
     }
 }

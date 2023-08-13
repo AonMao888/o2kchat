@@ -8,6 +8,7 @@ var askname = document.querySelector(".ask input");
 var askbtn = document.querySelector(".ask button");
 var pop = document.querySelector(".pop");
 let uname;
+let noti = new Audio('/no.mp3')
 document.querySelector(".pop img").src = 'https://api.qrserver.com/v1/create-qr-code/?size=150x150&data='+window.location.href;
 
 askbtn.onclick=()=>{
@@ -92,6 +93,7 @@ socket.on('msg',(data)=>{
                 </div>
             </div>
         </div>`;
+        noti.play();
         }else if(data.type == 'img'){
             msg.innerHTML += `<div class="text in">
             <div class="letter" title="Send from ${data.sender} at ${data.time}">
@@ -102,6 +104,7 @@ socket.on('msg',(data)=>{
                 </div>
             </div>
         </div>`;
+        noti.play();
         }else if(data.type == 'link'){
             msg.innerHTML += `<div class="text in">
             <div class="letter" title="Send from ${data.sender} at ${data.time}">
@@ -112,6 +115,7 @@ socket.on('msg',(data)=>{
                 </div>
             </div>
         </div>`;
+        noti.play();
         }
     }
 })
