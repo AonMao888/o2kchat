@@ -33,34 +33,86 @@ socket.on('join',(data)=>{
 btn.onclick=()=>{
     let yetdate = new Date();
     let now = yetdate.getHours()+':'+yetdate.getMinutes()+','+yetdate.getDate()+'.'+yetdate.getMonth()+'.'+yetdate.getFullYear();
-    socket.emit('msg',{
-        sender:uname,
-        time:now,
-        text:inp.value
-    })
+    if(inp.value.includes('http')){
+        socket.emit('msg',{
+            sender:uname,
+            time:now,
+            data:inp.value,
+            type:'link'
+        })
+    }else{
+        socket.emit('msg',{
+            sender:uname,
+            time:now,
+            data:inp.value,
+            type:text
+        })
+    }
     inp.value = '';
 }
 
 socket.on('msg',(data)=>{
     if(data.sender == uname){
-        msg.innerHTML += `<div class="text out">
-        <div class="letter" title="Send from ${data.sender} at ${data.time}">
-            <p>${data.text}</p>
-            <div class="er">
-                <span>${data.time}</span>
+        if(data.type == 'text'){
+            msg.innerHTML += `<div class="text out">
+            <div class="letter" title="Send from ${data.sender} at ${data.time}">
+                <p>${data.data}</p>
+                <div class="er">
+                    <span>${data.time}</span>
+                </div>
             </div>
-        </div>
-    </div>`;
+        </div>`;
+        }else if(data.type == 'img'){
+            msg.innerHTML += `<div class="text out">
+            <div class="letter" title="Send from ${data.sender} at ${data.time}">
+                <img src="${data.data}">
+                <div class="er">
+                    <span>${data.time}</span>
+                </div>
+            </div>
+        </div>`;
+        }else if(data.type == 'link'){
+            msg.innerHTML += `<div class="text out">
+            <div class="letter" title="Send from ${data.sender} at ${data.time}">
+                <a href="${data.data}">${data.data}</a>
+                <div class="er">
+                    <span>${data.time}</span>
+                </div>
+            </div>
+        </div>`;
+        }
     }else{
-        msg.innerHTML += `<div class="text in">
-        <div class="letter">
-            <p>${data.text}</p>
-            <div class="er">
-                <h5>${data.sender}</h5>
-                <span>${data.time}</span>
+        if(data.type == 'text'){
+            msg.innerHTML += `<div class="text in">
+            <div class="letter">
+                <p>${data.data}</p>
+                <div class="er">
+                    <h5>${data.sender}</h5>
+                    <span>${data.time}</span>
+                </div>
             </div>
-        </div>
-    </div>`;
+        </div>`;
+        }else if(data.type == 'img'){
+            msg.innerHTML += `<div class="text in">
+            <div class="letter" title="Send from ${data.sender} at ${data.time}">
+                <img src="${data.data}">
+                <div class="er">
+                    <h5>${data.sender}</h5>
+                    <span>${data.time}</span>
+                </div>
+            </div>
+        </div>`;
+        }else if(data.type == 'link'){
+            msg.innerHTML += `<div class="text in">
+            <div class="letter" title="Send from ${data.sender} at ${data.time}">
+                <a href="${data.data}">${data.data}</a>
+                <div class="er">
+                    <h5>${data.sender}</h5>
+                    <span>${data.time}</span>
+                </div>
+            </div>
+        </div>`;
+        }
     }
 })
 
@@ -88,4 +140,28 @@ function qr(){
 }
 function closepop(){
     pop.style.display = 'none';
+}
+function imgclick(){
+    let link = prompt("Paste image link in the input box below.");
+    if(link.includes('http')){
+        document.querySelector(".previewimg").style.display = 'flex';
+        document.querySelector(".previewimg img").src = link;
+    }else{
+        alert("Your link wasn't incorrect!")
+    }
+}
+function cancelimg(){
+    document.querySelector(".previewimg").style.display = 'none';
+    document.querySelector(".previewimg img").src = '';
+}
+function sendimg(){
+    let yetdate = new Date();
+    let now = yetdate.getHours()+':'+yetdate.getMinutes()+','+yetdate.getDate()+'.'+yetdate.getMonth()+'.'+yetdate.getFullYear();
+    socket.emit('msg',{
+        sender:uname,
+        time:now,
+        data:document.querySelector(".previewimg img").src,
+        type:'img'
+    });
+    cancelimg()
 }

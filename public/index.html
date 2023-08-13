@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O2K Chat room</title>
+    <title>O2K Chat</title>
     <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <meta name="description" content="Let's chat with friends in this group.">
@@ -13,7 +13,7 @@
         <nav>
             <div class="left">
                 <img src="img/logo.png" alt="">
-                <h1>O2K Developers</h1>
+                <h1>O2K Chat</h1>
             </div>
             <div class="right">
                 <a href="javascript:qr()"><img src="https://cdn-icons-png.flaticon.com/512/10846/10846192.png" alt=""></a>
@@ -24,7 +24,7 @@
         <div class="msg">
         </div>
         <div class="bar">
-            <a href="javascript:alert('Send image will available soon.')"><img src="https://cdn-icons-png.flaticon.com/512/10054/10054290.png" alt=""></a>
+            <a href="javascript:imgclick()"><img src="https://cdn-icons-png.flaticon.com/512/10054/10054290.png" alt=""></a>
             <input type="text" placeholder="Say something">
             <button><img src="https://cdn-icons-png.flaticon.com/512/3682/3682321.png" alt=""></button>
         </div>
@@ -40,6 +40,12 @@
         <p>Aim your scanner to QR Code</p>
         <img src="img/logo.png" alt="">
         <button onclick="closepop()">Close</button>
+    </div>
+    <div class="previewimg">
+        <h1>Preview image</h1>
+        <img src="https://gumlet.assettype.com/fortuneindia/2022-05/aa97d57d-9639-444b-80ea-578a0ea2ddda/Gold_prices.jpg?w=1200&h=673" alt="">
+        <button onclick="sendimg()">Send</button>
+        <button onclick="cancelimg()">Cancel</button>
     </div>
     <script src="socket.io/socket.io.js"></script>
     <script src="j.js"></script>
