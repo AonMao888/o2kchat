@@ -45,7 +45,7 @@ btn.onclick=()=>{
             sender:uname,
             time:now,
             data:inp.value,
-            type:text
+            type:'text'
         })
     }
     inp.value = '';
